@@ -5,86 +5,110 @@ import java.util.List;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection="books")
+@Document(collection = "books")
 public class Book {
-    @Field("_id")
+
+	@Field("_id")
 	private String id;
-    private String title;
-    private String isbn;
-    private String pageCount;
-    private String publishedDate;
-    private String thumbnailUrl;
-    private String shortDescription;
-    private String longDescription;
-    private String status;
-    private List<String> authors;
-    private List<String> categories;
+	private String title;
+	private String isbn;
+	private int pageCount;
+	private String publishedDate;
+	private String thumbnailUrl;
+	private String shortDescription;
+	private String longDescription;
+	private String status;
+	private List<String> authors;
+	private List<String> categories;
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getIsbn() {
 		return isbn;
 	}
+
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	public String getPageCount() {
+
+	public int getPageCount() {
 		return pageCount;
 	}
-	public void setPageCount(String pageCount) {
+
+	public void setPageCount(int pageCount) {
 		this.pageCount = pageCount;
 	}
+
 	public String getPublishedDate() {
 		return publishedDate;
 	}
+
 	public void setPublishedDate(String publishedDate) {
 		this.publishedDate = publishedDate;
 	}
+
 	public String getThumbnailUrl() {
 		return thumbnailUrl;
 	}
+
 	public void setThumbnailUrl(String thumbnailUrl) {
 		this.thumbnailUrl = thumbnailUrl;
 	}
+
 	public String getShortDescription() {
 		return shortDescription;
 	}
+
 	public void setShortDescription(String shortDescription) {
 		this.shortDescription = shortDescription;
 	}
+
 	public String getLongDescription() {
 		return longDescription;
 	}
+
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
 	}
+
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	public List<String> getAuthors() {
 		return authors;
 	}
+
 	public void setAuthors(List<String> authors) {
 		this.authors = authors;
 	}
+
 	public List<String> getCategories() {
 		return categories;
 	}
+
 	public void setCategories(List<String> categories) {
 		this.categories = categories;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -94,7 +118,6 @@ public class Book {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
 		result = prime * result + ((longDescription == null) ? 0 : longDescription.hashCode());
-		result = prime * result + ((pageCount == null) ? 0 : pageCount.hashCode());
 		result = prime * result + ((publishedDate == null) ? 0 : publishedDate.hashCode());
 		result = prime * result + ((shortDescription == null) ? 0 : shortDescription.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
@@ -102,6 +125,7 @@ public class Book {
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -136,11 +160,7 @@ public class Book {
 				return false;
 		} else if (!longDescription.equals(other.longDescription))
 			return false;
-		if (pageCount == null) {
-			if (other.pageCount != null)
-				return false;
-		} else if (!pageCount.equals(other.pageCount))
-			return false;
+
 		if (publishedDate == null) {
 			if (other.publishedDate != null)
 				return false;
@@ -168,6 +188,7 @@ public class Book {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", title=" + title + ", isbn=" + isbn + ", pageCount=" + pageCount
@@ -176,5 +197,4 @@ public class Book {
 				+ authors + ", categories=" + categories + "]";
 	}
 
-	
 }

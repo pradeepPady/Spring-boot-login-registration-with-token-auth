@@ -11,5 +11,8 @@ import com.example.demo.models.Book;
 public interface BookRepositery extends MongoRepository<Book, String>{
 Optional<Book> findById(String id);
 List<Book>findByAuthorsContains(String authr);
-List<Book>findByCategories(String ctegary);
+List<Book>findByCategoriesContains(String ctegary);
+List<Book> findByPageCountIsIn(int pageCount);
+List<Book> findByShortDescriptionContaining(String msg);
+List<Book> findByStatus(String msg);
 }
