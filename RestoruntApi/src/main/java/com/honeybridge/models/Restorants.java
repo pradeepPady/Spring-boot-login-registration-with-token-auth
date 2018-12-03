@@ -6,7 +6,6 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection="restaurant")
 public class Restorants {
-
 	public Restorants(String _id, String uRL, String address, String address_line_2, String name, String outcode,
 			String postcode, String rating, String typeOfFood) {
 		super();

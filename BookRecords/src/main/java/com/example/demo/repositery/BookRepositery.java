@@ -15,4 +15,7 @@ List<Book>findByCategoriesContains(String ctegary);
 List<Book> findByPageCountIsIn(int pageCount);
 List<Book> findByShortDescriptionContaining(String msg);
 List<Book> findByStatus(String msg);
+List<Book> findByTitleIsStartingWith(String pat);
+List<Book> findByTitleStartingWith(String pat);
+
 }

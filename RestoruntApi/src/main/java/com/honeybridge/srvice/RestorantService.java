@@ -3,6 +3,7 @@ package com.honeybridge.srvice;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.honeybridge.models.Restorants;
@@ -25,4 +26,5 @@ public class RestorantService {
 		return repository.findByTypeOfFood(type);
 	}
 
+	
 }

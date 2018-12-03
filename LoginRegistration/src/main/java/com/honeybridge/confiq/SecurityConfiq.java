@@ -14,24 +14,19 @@ public class SecurityConfiq extends WebSecurityConfigurerAdapter {
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 		return bCryptPasswordEncoder;
 	}
+
 	@Bean
 	public String message() {
 		System.out.println("Bean message!!!!!!!");
-		String message="Hii bean massge";
+		String message = "Hii bean massge";
 		return message;
 	}
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-      System.out.println("Configure!!!!!!!!!");
-		http.csrf().disable()
-		 .authorizeRequests()
-         .anyRequest().permitAll()
-         .and()
-         .formLogin()
-         .permitAll()
-         .and()
-         .logout()
-         .permitAll();
+		System.out.println("Configure!!!!!!!!!");
+		http.csrf().disable().authorizeRequests().anyRequest().permitAll().and().formLogin().permitAll().and().logout()
+				.permitAll();
 	}
 
 }
