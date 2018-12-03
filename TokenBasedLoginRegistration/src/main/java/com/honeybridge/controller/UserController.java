@@ -46,33 +46,4 @@ public class UserController {
 		return "User account is created sucsessfully.....";
 		
 	}
-	@RequestMapping("/encode")
-	public String test(){
-		String username="pad";
-		String password="pad123";
-		String authString=username+":"+password;
-		Base64 base64=new Base64();
-		byte[] authStringEncrptd=base64.encode(authString.getBytes());
-		String authEncrypt=new String(authStringEncrptd);
-		return authEncrypt;
-		
-	}
-	@RequestMapping("/decode")
-	public String test1() {
-		String username="pad";
-		String password="pad123";
-		String authString=username+":"+password;
-		Base64 base64=new Base64();
-		byte[] authStringEncrptd=base64.encode(authString.getBytes());
-		String authEncrypt=new String(authStringEncrptd);
-		byte[] bytes = null;
-        bytes = base64.decode(authEncrypt.getBytes());
-        String decodedAuth = new String(bytes);
-        System.out.println(decodedAuth);
-        String authInfos[]=decodedAuth.split(":");
-        String username1=authInfos[0];
-        String password1=authInfos[1];
-		return username1+" "+password1;
-		
-	}
 }
